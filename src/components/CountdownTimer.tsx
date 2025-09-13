@@ -16,7 +16,7 @@ const CountdownTimer = ({ variant = "default" }: { variant?: CountdownVariant })
   const [isEventPassed, setIsEventPassed] = useState(false);
 
   // Event date: September 20, 2025, 2:00 PM IST
-  const eventDate = new Date("2025-09-20T14:00:00+05:30");
+  const eventDate = new Date("2025-09-12T14:00:00+05:30");
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -84,14 +84,13 @@ const CountdownTimer = ({ variant = "default" }: { variant?: CountdownVariant })
     );
   };
 
-  if (isEventPassed && variant !== "compact") {
-    return (
-      <div className="text-center py-8 animate-scale-in">
-        <div className="text-2xl font-bold text-accent mb-2">Workshop Has Started!</div>
-        <div className="text-muted-foreground">Join us now for the Blindfolder Challenge</div>
-      </div>
-    );
-  }
+  // if (isEventPassed && variant !== "compact") {
+  //   return (
+  //     <div className="text-center py-8 animate-scale-in h-1 pt-2">
+  //       <div className="text-xl font-bold text-accent mb-2">We're Live, Join Us Now!</div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className={variant === "compact" ? "py-1" : variant === "header" ? "py-0" : "text-center py-8 animate-fade-in"}>

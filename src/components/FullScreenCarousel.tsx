@@ -126,7 +126,7 @@ const FullScreenCarousel = () => {
                     </div>
     
                     {/* Scrollable Content Area */}
-                    <div className="flex-1 overflow-y-auto px-4 md:px-6 pb-4 md:pb-6">
+                    <div className="flex-1 overflow-y-auto px-4 md:px-6 pb-4 md:pb-6 pt-1">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 w-full max-w-5xl mx-auto">
                             {[
                                 { icon: <Gamepad className="h-6 w-6 md:h-8 md:w-8 text-primary" />, title: "Fun Games", desc: "Interactive challenges that make learning addictive", animation: "animate-spin-glow" },
@@ -158,13 +158,13 @@ const FullScreenCarousel = () => {
       content: (
         <div className="relative h-full w-full overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_70%_30%,hsl(291_95%_20%_/_0.45)_0%,transparent_70%)]" />
-          <div className="relative h-full flex items-center justify-center px-6">
-            <Card className="w-full max-w-6xl bg-card/60 backdrop-blur-xl border border-accent/30">
-              <CardContent className="p-8">
-                <h2 className="text-center text-3xl md:text-4xl font-cyber font-bold mb-8">
+          <div className="relative h-full flex flex-col md:flex-row md:items-center md:justify-center px-4 md:px-6 py-4 md:py-0">
+            <Card className="w-full max-w-6xl bg-card/60 backdrop-blur-xl border border-accent/30 flex-1 md:flex-none">
+              <CardContent className="p-4 md:p-8 h-full md:h-auto flex flex-col md:block">
+                <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-cyber font-bold mb-6 md:mb-8 flex-shrink-0">
                   Meet Your Speakers
                 </h2>
-                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto flex-1 md:flex-none">
                    {[
                       { 
                         name: "Akshat Aggarwal",
@@ -237,31 +237,35 @@ const FullScreenCarousel = () => {
                      return (
                        <div key={idx} className="group relative">
                          <div 
-                           className="text-center rounded-xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 p-2 md:p-3 hover:border-primary/40 hover:from-primary/10 hover:to-accent/10 transition-all duration-300 hover:shadow-accent-glow cursor-pointer md:cursor-default active:scale-95 md:active:scale-100"
+                           className="text-center rounded-xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 p-3 md:p-3 hover:border-primary/40 hover:from-primary/10 hover:to-accent/10 transition-all duration-300 hover:shadow-accent-glow cursor-pointer md:cursor-default active:scale-95 md:active:scale-100 h-32 md:h-auto flex flex-col justify-between"
                            onClick={() => {
                              // Only trigger on mobile (when hover cards are hidden)
                              handleSpeakerClick(speaker);
                            }}
                          >
-                           <div className="relative mx-auto mb-2 h-12 w-12 md:h-16 md:w-16">
-                             <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,theme(colors.primary.DEFAULT)_0%,theme(colors.accent.DEFAULT)_60%,transparent_100%)] opacity-30 blur-sm" />
-                             <div className="relative h-full w-full rounded-full border-2 border-primary/30 bg-speaker-card flex items-center justify-center shadow-secondary-glow group-hover:scale-[1.05] transition-transform duration-300 overflow-hidden">
-                               <img 
-                                 src={speaker.image} 
-                                 alt={speaker.name}
-                                 className="h-full w-full object-cover rounded-full"
-                                 onError={(e) => {
-                                   const target = e.target as HTMLImageElement;
-                                   target.style.display = 'none';
-                                   target.nextElementSibling?.classList.remove('hidden');
-                                 }}
-                               />
-                               <User className="h-6 w-6 md:h-8 md:w-8 text-accent hidden" />
+                           <div className="flex-shrink-0">
+                             <div className="relative mx-auto mb-2 h-14 w-14 md:h-16 md:w-16">
+                               <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,theme(colors.primary.DEFAULT)_0%,theme(colors.accent.DEFAULT)_60%,transparent_100%)] opacity-30 blur-sm" />
+                               <div className="relative h-full w-full rounded-full border-2 border-primary/30 bg-speaker-card flex items-center justify-center shadow-secondary-glow group-hover:scale-[1.05] transition-transform duration-300 overflow-hidden">
+                                 <img 
+                                   src={speaker.image} 
+                                   alt={speaker.name}
+                                   className="h-full w-full object-cover rounded-full"
+                                   onError={(e) => {
+                                     const target = e.target as HTMLImageElement;
+                                     target.style.display = 'none';
+                                     target.nextElementSibling?.classList.remove('hidden');
+                                   }}
+                                 />
+                                 <User className="h-7 w-7 md:h-8 md:w-8 text-accent hidden" />
+                               </div>
                              </div>
                            </div>
-                           <div className="font-semibold text-primary tracking-wide text-xs md:text-sm">{speaker.name}</div>
-                           <div className="text-[10px] md:text-xs text-accent mt-0.5">{speaker.jobTitle}</div>
-                           <div className="text-[8px] text-muted-foreground mt-1 md:hidden">Tap for details</div>
+                           <div className="flex-1 flex flex-col justify-center min-h-0 px-1">
+                             <div className="font-semibold text-primary tracking-wide text-sm md:text-sm leading-tight" title={speaker.name}>{speaker.name}</div>
+                             <div className="text-xs md:text-xs text-accent mt-1 leading-tight" title={speaker.jobTitle}>{speaker.jobTitle}</div>
+                           </div>
+                           {/* <div className="text-[8px] text-muted-foreground mt-1 md:hidden">Tap for details</div> */}
                          </div>
                          
                          {/* Hover Card with conditional positioning - Hidden on mobile */}

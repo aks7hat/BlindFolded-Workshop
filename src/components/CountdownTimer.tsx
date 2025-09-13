@@ -48,11 +48,11 @@ const CountdownTimer = ({ variant = "default" }: { variant?: CountdownVariant })
   const TimeBox = ({ value, label }: { value: number; label: string }) => {
     if (variant === "header") {
       return (
-        <div className="px-2 py-1 text-center rounded-lg bg-background/80 border border-primary/40 shadow-secondary-glow">
-          <div className={`text-[16px] md:text-[18px] leading-none font-cyber font-black text-transparent bg-clip-text bg-neon-gradient ${lastTick ? 'animate-tick-pop' : ''}`}>
+        <div className="px-1 md:px-2 py-0.5 md:py-1 text-center rounded-lg bg-background/80 border border-primary/40 shadow-secondary-glow">
+          <div className={`text-[12px] md:text-[16px] lg:text-[18px] leading-none font-cyber font-black text-transparent bg-clip-text bg-neon-gradient ${lastTick ? 'animate-tick-pop' : ''}`}>
             {value.toString().padStart(2, '0')}
           </div>
-          <div className="text-[7px] md:text-[8px] text-muted-foreground uppercase tracking-[0.15em] mt-0.5">
+          <div className="text-[6px] md:text-[7px] lg:text-[8px] text-muted-foreground uppercase tracking-[0.15em] mt-0.5">
             {label}
           </div>
         </div>
@@ -107,7 +107,7 @@ const CountdownTimer = ({ variant = "default" }: { variant?: CountdownVariant })
         variant === "compact"
           ? "flex items-center gap-2"
           : variant === "header"
-          ? "flex items-center gap-0.5 md:gap-1"
+          ? "flex items-center gap-0.5 sm:gap-1 md:gap-1"
           : "flex items-center justify-center gap-4 md:gap-8 mb-6"
       }>
         <TimeBox value={timeLeft.days} label={variant === "compact" || variant === "header" ? "D" : "DAYS"} />

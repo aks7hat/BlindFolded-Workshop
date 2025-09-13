@@ -16,7 +16,7 @@ const CountdownTimer = ({ variant = "default" }: { variant?: CountdownVariant })
   const [isEventPassed, setIsEventPassed] = useState(false);
 
   // Event date: September 20, 2025, 2:00 PM IST
-  const eventDate = new Date("2025-09-12T14:00:00+05:30");
+  const eventDate = new Date("2025-09-20T14:00:00+05:30");
 
   useEffect(() => {
     const calculateTimeLeft = () => {

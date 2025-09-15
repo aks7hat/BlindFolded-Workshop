@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import EventFooter from "./components/EventFooter";
 
 import AccessibilityChallenge from "./pages/AccessibilityChallenge";
+import PasswordChallengeEmbed from "./pages/PasswordChallengeEmbed";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/accessibility-challenge" element={<AccessibilityChallenge />} />
+          <Route path="/password-challenge" element={<PasswordChallengeEmbed />} />
+          <Route path="/leaderboard" element={<PasswordChallengeEmbed />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

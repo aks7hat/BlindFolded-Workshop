@@ -1,14 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/password-challenge(.*)",
-      "destination": "https://sense-of-security.vercel.app/"
-    },
-    {
-      "source": "/leaderboard(.*)",
-      "destination": "https://sense-of-security.vercel.app/leaderboard "
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

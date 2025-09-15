@@ -132,6 +132,16 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  /* Hide scrollbars utility (width and height 0) */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
   @keyframes floatY {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-14px); }

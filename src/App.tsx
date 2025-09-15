@@ -18,7 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <div className="min-h-screen w-screen overflow-x-hidden overflow-y-auto bg-background">
+      <div className="min-h-screen w-screen no-scrollbar overflow-x-hidden overflow-y-auto bg-background">
       <Navigation />
       <BrowserRouter>
         <Routes>

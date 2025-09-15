@@ -33,7 +33,7 @@ const AccessibilityChallenge = () => {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-128px)] w-full overflow-hidden bg-cosmic-gradient">
+    <section className="relative min-h-[calc(100vh-128px)] w-full overflow-hidden bg-cosmic-gradient no-scrollbar">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -inset-[20%] bg-[conic-gradient(from_0deg,hsl(200_60%_45%),transparent_30%,hsl(320_50%_55%),transparent_60%,hsl(280_45%_50%),transparent_90%)] opacity-15 blur-3xl animate-rotate-slow" />
         <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_50%,hsl(200_50%_12%_/_0.25)_0%,transparent_70%)]" />
@@ -88,18 +88,23 @@ const AccessibilityChallenge = () => {
 
         {/* Instructions */}
         <div className="w-full text-base md:text-lg space-y-4 bg-background/60 backdrop-blur-sm border border-primary/20 rounded-2xl p-5 md:p-6">
-          <div className="flex items-center justify-between gap-3 mb-2">
+          <div className="flex items-center gap-3 mb-2">
             <h2 className="text-2xl font-cyber font-black text-transparent bg-clip-text bg-neon-gradient">Instructions</h2>
-            <div className="hidden md:inline-flex items-center gap-2 rounded-full border border-primary/30 px-3 py-1 text-xs text-primary shadow-accent-glow">
-              <span>5 steps to finish</span>
-            </div>
           </div>
           <p className="text-sm md:text-base text-muted-foreground">Follow these steps to build, test, and improve your snippet for accessibility.</p>
           <ol className="list-decimal pl-6 space-y-3 marker:text-accent marker:font-semibold">
             <li className="bg-background/70 border border-primary/20 hover:border-primary/40 rounded-xl p-4 transition-shadow hover:shadow-accent-glow">
+              <strong>Choose a Snippet</strong>
+              <ul className="list-disc pl-6">
+                <li>Choose one of the three available HTML snippets.</li>
+              </ul>
+            </li>
+            <li className="bg-background/70 border border-primary/20 hover:border-primary/40 rounded-xl p-4 transition-shadow hover:shadow-accent-glow">
               <strong>Set Up Your Coding Environment</strong>
               <ul className="list-disc pl-6">
-                <li>Visit CodeSandbox.</li>
+                <li>
+                  Visit <a href="https://codesandbox.io/" target="_blank" rel="noopener noreferrer" className="underline text-primary hover:text-accent">CodeSandbox</a>.
+                </li>
                 <li>Sign up for a free account if you don’t already have one.</li>
                 <li>
                   Create a new project:

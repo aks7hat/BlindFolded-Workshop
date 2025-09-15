@@ -1,8 +1,20 @@
 {
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/index.html"
-        }
-    ]
+  "redirects": [
+    {
+      "source": "/password-game",
+      "destination": "https://sense-of-security.vercel.app/",
+      "permanent": true
+    },
+    {
+        "source": "/leaderboard",
+        "destination": "https://sense-of-security.vercel.app/leaderboard",
+        "permanent": true
+      }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

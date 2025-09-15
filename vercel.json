@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/password-challenge(.*)",
-      "destination": "https://sense-of-security.vercel.app$1"
+      "destination": "https://sense-of-security.vercel.app/"
     },
     {
       "source": "/leaderboard(.*)",
-      "destination": "https://sense-of-security.vercel.app/leaderboard$1"
+      "destination": "https://sense-of-security.vercel.app/leaderboard "
     },
     {
       "source": "/(.*)",

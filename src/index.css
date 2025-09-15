@@ -129,9 +129,29 @@ All colors MUST be HSL.
   #countdown-section {
     scroll-margin-top: 5rem; /* Account for sticky header height */
   }
+
+  /* Hide scrollbars globally (width and height 0) */
+  * {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  *::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
 }
 
 @layer utilities {
+  /* Hide scrollbars utility (width and height 0) */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
   @keyframes floatY {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-14px); }

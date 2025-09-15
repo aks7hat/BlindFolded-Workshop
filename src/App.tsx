@@ -6,10 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
-import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import SpeakersSection from "./components/SpeakersSection";
 import Footer from "./components/Footer";
+import EventFooter from "./components/EventFooter";
+
+import AccessibilityChallenge from "./pages/AccessibilityChallenge";
+import PasswordChallengeEmbed from "./pages/PasswordChallengeEmbed";
 
 const queryClient = new QueryClient();
 
@@ -18,13 +19,21 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <div className="min-h-screen w-screen no-scrollbar overflow-x-hidden overflow-y-auto bg-background">
+      <Navigation />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/accessibility-challenge" element={<AccessibilityChallenge />} />
+          <Route path="/password-challenge" element={<PasswordChallengeEmbed />} />
+          <Route path="/leaderboard" element={<PasswordChallengeEmbed />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <EventFooter />
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );

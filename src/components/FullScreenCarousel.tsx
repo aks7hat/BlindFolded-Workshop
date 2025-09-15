@@ -83,7 +83,7 @@ const FullScreenCarousel = () => {
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-cyber font-black leading-[0.95]">
               <span className="block text-transparent bg-clip-text bg-neon-gradient">BLINDFOLDED</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-text-secondary">Browsing</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-text-secondary pb-3">Browsing</span>
             </h1>
             <p className="mt-3 md:mt-4 max-w-2xl text-sm md:text-base lg:text-lg text-muted-foreground">
               The Accessibility Challenge Shaking Up the Web!

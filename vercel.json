@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "/password-game",
+      "source": "/password-challenge",
       "destination": "https://sense-of-security.vercel.app/",
       "permanent": true
     },

@@ -27,7 +27,7 @@ const App = () => (
           <Route path="/accessibility-challenge" element={<AccessibilityChallenge />} />
           <Route path="/password-challenge" element={<PasswordChallengeEmbed />} />
           <Route path="/leaderboard" element={<PasswordChallengeEmbed />} />
-          <Route path="/guess-challenge" element={<GuessChallenge />} />
+          <Route path="/guess-me-if-you-can-challenge" element={<GuessChallenge />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

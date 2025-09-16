@@ -1,6 +1,6 @@
 import React from "react";
 
-const PasswordChallengeEmbed = () => {
+const LeaderBoardPage = () => {
   return (
     <section className="relative h-[calc(100vh-128px)] w-full bg-background">
       <iframe
@@ -13,6 +13,6 @@ const PasswordChallengeEmbed = () => {
   );
 };
 
-export default PasswordChallengeEmbed;
+export default LeaderBoardPage;
 
 

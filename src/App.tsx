@@ -11,6 +11,7 @@ import EventFooter from "./components/EventFooter";
 import AccessibilityChallenge from "./pages/AccessibilityChallenge";
 import PasswordChallengeEmbed from "./pages/PasswordChallengeEmbed";
 import GuessChallenge from "./pages/GuessChallenge";
+import LeaderBoardPage from "./pages/Leaderboard";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/accessibility-challenge" element={<AccessibilityChallenge />} />
           <Route path="/password-challenge" element={<PasswordChallengeEmbed />} />
-          <Route path="/leaderboard" element={<PasswordChallengeEmbed />} />
+          <Route path="/leaderboard" element={<LeaderBoardPage />} />
           <Route path="/guess-me-if-you-can-challenge" element={<GuessChallenge />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

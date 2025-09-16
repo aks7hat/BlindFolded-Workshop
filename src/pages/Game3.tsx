@@ -1,6 +1,6 @@
 import React from "react";
 
-const Game1 = () => {
+const Game3 = () => {
   return (
     <section className="relative min-h-[calc(100vh-128px)] w-full overflow-hidden bg-cosmic-gradient no-scrollbar">
       <div className="absolute inset-0 pointer-events-none">
@@ -12,12 +12,9 @@ const Game1 = () => {
 
       <div className="relative mx-auto max-w-none px-4 md:px-8 lg:px-12 py-8 md:py-12">
         <div className="text-center mb-8 md:mb-10">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-2 text-primary font-cyber backdrop-blur-sm">
-            <span className="text-sm">Game 1 Challenge</span>
-          </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-cyber font-black leading-tight">
-            <span className="block text-transparent bg-clip-text bg-neon-gradient">BLINDFOLDED</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-text-secondary">Game 1</span>
+          <h1 className="font-cyber font-black leading-tight">
+            <span className="block text-sm md:text-base text-transparent bg-clip-text bg-neon-gradient tracking-[0.15em]">BLINDFOLDED BROWSING</span>
+            <span className="block text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-accent to-text-secondary">Game 3</span>
           </h1>
           <p className="mt-3 text-sm md:text-base text-muted-foreground">Follow the instructions below. The black area is your play zone.</p>
         </div>
@@ -27,6 +24,18 @@ const Game1 = () => {
             <span className="text-muted-foreground font-cyber">Black Middle Section</span>
           </div>
         </div>
+
+        {/* Important Note */}
+        <div
+          role="note"
+          aria-label="Important note about AI tool usage"
+          className="mb-8 rounded-xl border border-red-500/30 bg-red-900/20 px-4 py-3 text-red-200"
+        >
+          <p className="text-sm md:text-base">
+            <span className="font-semibold">Important:</span> Use of AI tools is strictly discouraged. Participants found using AI may face disqualification.
+          </p>
+        </div>
+
 
         <div className="w-full text-base md:text-lg space-y-4 bg-background/60 backdrop-blur-sm border border-primary/20 rounded-2xl p-5 md:p-6">
           <div className="flex items-center gap-3 mb-2">
@@ -53,4 +62,4 @@ const Game1 = () => {
   );
 };
 
-export default Game1;
+export default Game3;

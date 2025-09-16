@@ -44,26 +44,14 @@ const AccessibilityChallenge = () => {
       <div className="relative mx-auto max-w-none px-4 md:px-8 lg:px-12 py-8 md:py-12">
         {/* Heading */}
         <div className="text-center mb-8 md:mb-10">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-2 text-primary font-cyber backdrop-blur-sm">
-            <span className="text-sm">Accessibility Challenge</span>
-          </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-cyber font-black leading-tight">
-            <span className="block text-transparent bg-clip-text bg-neon-gradient">BLINDFOLDED</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-text-secondary">Browsing</span>
+          <h1 className="font-cyber font-black leading-tight">
+            <span className="block text-sm md:text-base text-transparent bg-clip-text bg-neon-gradient tracking-[0.15em]">BLINDFOLDED BROWSING</span>
+            <span className="block text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-accent to-text-secondary">Accessibility Challenge</span>
           </h1>
           <p className="mt-3 text-sm md:text-base text-muted-foreground">Copy a snippet, build it, and optimize it for accessibility.</p>
         </div>
 
-        {/* Important Note */}
-        <div
-          role="note"
-          aria-label="Important note about AI tool usage"
-          className="mb-8 rounded-xl border border-red-500/30 bg-red-900/20 px-4 py-3 text-red-200"
-        >
-          <p className="text-sm md:text-base">
-            <span className="font-semibold">Important:</span> Use of AI tools is strictly discouraged. Participants found using AI may face disqualification.
-          </p>
-        </div>
+
 
         {/* 3 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 mb-12">
@@ -95,6 +83,17 @@ const AccessibilityChallenge = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Important Note */}
+        <div
+          role="note"
+          aria-label="Important note about AI tool usage"
+          className="mb-8 rounded-xl border border-red-500/30 bg-red-900/20 px-4 py-3 text-red-200"
+        >
+          <p className="text-sm md:text-base">
+            <span className="font-semibold">Important:</span> Use of AI tools is strictly discouraged. Participants found using AI may face disqualification.
+          </p>
         </div>
 
         {/* Instructions */}

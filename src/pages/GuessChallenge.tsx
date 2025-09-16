@@ -60,17 +60,6 @@ const GuessChallenge = () => {
           </div>
         </div>
 
-        {/* Important Note */}
-        <div
-          role="note"
-          aria-label="Important note about AI tool usage"
-          className="mb-8 rounded-xl border border-red-500/30 bg-red-900/20 px-4 py-3 text-red-200"
-        >
-          <p className="text-sm md:text-base">
-            <span className="font-semibold">Important:</span> Use of AI tools is strictly discouraged. Participants found using AI may face disqualification.
-          </p>
-        </div>
-
         {/* Instructions */}
         <div className="w-full text-base md:text-lg space-y-4 bg-background/60 backdrop-blur-sm border border-primary/20 rounded-2xl p-5 md:p-6">
           <div className="flex items-center gap-3 mb-2">

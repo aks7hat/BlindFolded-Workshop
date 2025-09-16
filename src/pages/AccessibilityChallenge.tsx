@@ -54,6 +54,17 @@ const AccessibilityChallenge = () => {
           <p className="mt-3 text-sm md:text-base text-muted-foreground">Copy a snippet, build it, and optimize it for accessibility.</p>
         </div>
 
+        {/* Important Note */}
+        <div
+          role="note"
+          aria-label="Important note about AI tool usage"
+          className="mb-8 rounded-xl border border-red-500/30 bg-red-900/20 px-4 py-3 text-red-200"
+        >
+          <p className="text-sm md:text-base">
+            <span className="font-semibold">Important:</span> Use of AI tools is strictly discouraged. Participants found using AI may face disqualification.
+          </p>
+        </div>
+
         {/* 3 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 mb-12">
           {htmlSnippets.map((snippet, index) => (

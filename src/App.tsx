@@ -6,11 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
 import EventFooter from "./components/EventFooter";
 
 import AccessibilityChallenge from "./pages/AccessibilityChallenge";
 import PasswordChallengeEmbed from "./pages/PasswordChallengeEmbed";
+import GuessChallenge from "./pages/GuessChallenge";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +27,7 @@ const App = () => (
           <Route path="/accessibility-challenge" element={<AccessibilityChallenge />} />
           <Route path="/password-challenge" element={<PasswordChallengeEmbed />} />
           <Route path="/leaderboard" element={<PasswordChallengeEmbed />} />
+          <Route path="/guess-challenge" element={<GuessChallenge />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

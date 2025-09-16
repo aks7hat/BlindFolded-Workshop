@@ -10,19 +10,18 @@ interface TimeLeft {
 
 type CountdownVariant = "default" | "compact" | "header";
 
+// Keep the target event time stable across renders to avoid re-triggering effects
+const EVENT_TIME_MS = new Date("2025-09-20T14:00:00+05:30").getTime();
+
 const CountdownTimer = ({ variant = "default" }: { variant?: CountdownVariant }) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [lastTick, setLastTick] = useState<string>("");
   const [isEventPassed, setIsEventPassed] = useState(false);
 
-  // Event date: September 20, 2025, 2:00 PM IST
-  const eventDate = new Date("2025-09-20T14:00:00+05:30");
-
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
-      const eventTime = eventDate.getTime();
-      const difference = eventTime - now;
+      const difference = EVENT_TIME_MS - now;
 
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -43,7 +42,7 @@ const CountdownTimer = ({ variant = "default" }: { variant?: CountdownVariant })
     const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
-  }, [eventDate]);
+  }, []);
 
   const TimeBox = ({ value, label }: { value: number; label: string }) => {
     if (variant === "header") {

@@ -8,22 +8,23 @@ interface TimeLeft {
   seconds: number;
 }
 
-type CountdownVariant = "default" | "compact" | "header";
+// Keep the target event times stable across renders to avoid re-triggering effects
+const EVENT_START_MS = new Date("2025-09-20T14:00:00+05:30").getTime();
+const EVENT_END_MS = new Date("2025-09-20T15:45:00+05:30").getTime();
 
-// Keep the target event time stable across renders to avoid re-triggering effects
-const EVENT_TIME_MS = new Date("2025-09-20T14:00:00+05:30").getTime();
+type CountdownVariant = "default" | "compact" | "header";
 
 const CountdownTimer = ({ variant = "default" }: { variant?: CountdownVariant }) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [lastTick, setLastTick] = useState<string>("");
-  const [isEventPassed, setIsEventPassed] = useState(false);
+  const [phase, setPhase] = useState<"pre" | "live" | "ended">("pre");
 
   useEffect(() => {
-    const calculateTimeLeft = () => {
-      const now = new Date().getTime();
-      const difference = EVENT_TIME_MS - now;
+    const calculate = () => {
+      const now = Date.now();
 
-      if (difference > 0) {
+      if (now < EVENT_START_MS) {
+        const difference = EVENT_START_MS - now;
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
@@ -31,16 +32,18 @@ const CountdownTimer = ({ variant = "default" }: { variant?: CountdownVariant })
 
         setTimeLeft({ days, hours, minutes, seconds });
         setLastTick(`${days}-${hours}-${minutes}-${seconds}`);
-        setIsEventPassed(false);
+        setPhase("pre");
+      } else if (now >= EVENT_START_MS && now <= EVENT_END_MS) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        setPhase("live");
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        setIsEventPassed(true);
+        setPhase("ended");
       }
     };
 
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
-
+    calculate();
+    const timer = setInterval(calculate, 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -83,13 +86,19 @@ const CountdownTimer = ({ variant = "default" }: { variant?: CountdownVariant })
     );
   };
 
-  // if (isEventPassed && variant !== "compact") {
-  //   return (
-  //     <div className="text-center py-8 animate-scale-in h-1 pt-2">
-  //       <div className="text-xl font-bold text-accent mb-2">We're Live, Join Us Now!</div>
-  //     </div>
-  //   );
-  // }
+  // Header variant: when live/ended, show a compact message that fits the same space
+  if (variant === "header" && phase !== "pre") {
+    const message = phase === "live" ? "We’re live now!" : "Workshop Ended!";
+    return (
+      <div className="py-0">
+        <div
+        className={`text-[12px] md:text-[14px] lg:text-[15px] font-cyber font-black text-transparent bg-clip-text bg-neon-gradient whitespace-nowrap ${
+          phase === "live" ? "animate-pulse-scale" : ""}`}>
+          {message}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={variant === "compact" ? "py-1" : variant === "header" ? "py-0" : "text-center py-8 animate-fade-in"}>

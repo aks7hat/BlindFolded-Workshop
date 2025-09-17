@@ -29,7 +29,7 @@ const GuessChallenge = () => {
   ];
 
   return (
-    <section className="relative min-h-[calc(100vh-128px)] w-full overflow-hidden bg-cosmic-gradient no-scrollbar">
+    <section className="relative min-h-[calc(100vh-128px)] w-full overflow-hidden bg-cosmic-gradient no-scrollbar h-[calc(100vh-64px-64px)] overflow-y-auto">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -inset-[20%] bg-[conic-gradient(from_0deg,hsl(200_60%_45%),transparent_30%,hsl(320_50%_55%),transparent_60%,hsl(280_45%_50%),transparent_90%)] opacity-15 blur-3xl animate-rotate-slow" />
         <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_50%,hsl(200_50%_12%_/_0.25)_0%,transparent_70%)]" />
@@ -89,13 +89,13 @@ const GuessChallenge = () => {
                   <b>Round 1: Draw It Out ✏️</b>
                   <ul className="list-[square] pl-6">
                     <li>The Performer draws the action from the chit (no speaking allowed).</li>
-                    <li>The Decoders (teammates) try to guess.</li>
+                    <li>The Decoders (teammates) try to guess by acting it out.</li>
                   </ul>
                 </li>
                 <li>
                   <b>Round 2: Act It Out 🎭</b>
                   <ul className="list-[square] pl-6">
-                    <li>The Performer enacts the word/concept on the chit (no speaking allowed).</li>
+                    <li>The Performer enacts the movie on the chit (no speaking allowed).</li>
                     <li>The Decoders try to guess.</li>
                   </ul>
                 </li>

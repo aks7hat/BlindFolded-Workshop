@@ -12,8 +12,7 @@ import AccessibilityChallenge from "./pages/AccessibilityChallenge";
 import PasswordChallengeEmbed from "./pages/PasswordChallengeEmbed";
 import GuessChallenge from "./pages/GuessChallenge";
 import LeaderBoardPage from "./pages/Leaderboard";
-import Game1 from "./pages/Game2";
-import Game2 from "./pages/Game3";
+import KeyboardCommerceChallenge from "./pages/keyboardCommerceChallenge";
 
 const queryClient = new QueryClient();
 
@@ -31,8 +30,8 @@ const App = () => (
           <Route path="/password-challenge" element={<PasswordChallengeEmbed />} />
           <Route path="/leaderboard" element={<LeaderBoardPage />} />
           <Route path="/guess-me-if-you-can-challenge" element={<GuessChallenge />} />
-          <Route path="/game2" element={<Game1 />} />
-          <Route path="/game3" element={<Game2 />} />
+          <Route path="/keyboard-commerce-challenge" element={<KeyboardCommerceChallenge />} />
+          {/* <Route path="/game3" element={<Game2 />} /> */}
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -23,7 +23,7 @@ const KeyBoardCommerceChallengePage = () => {
         {/* Visual Cues */}
         {/* <div className="mb-8 grid grid-cols-1 md:grid-cols-1 gap-4">
           {[
-            { title: "Ecommerce Shopping with Keyboard", desc: "", key: "cue1", img: "/keyboard-challenge.png" },
+            { title: "Ecommerce Shopping with Keyboard", desc: "", key: "cue1", img: "/keyboard-challenge.webp" },
           ].map((cue) => (
             <div key={cue.key} className="group relative overflow-hidden rounded-2xl border border-primary/25 bg-background/60 backdrop-blur-sm shadow-accent-glow hover:border-primary/40 transition-colors">
             

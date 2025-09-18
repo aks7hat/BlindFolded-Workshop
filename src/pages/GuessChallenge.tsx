@@ -52,7 +52,7 @@ const GuessChallenge = () => {
           <div className="relative w-full overflow-hidden rounded-2xl border border-primary/20 bg-background/60 backdrop-blur-sm shadow-accent-glow">
             <div className="w-full h-[17rem] sm:h-[21rem] md:h-[25rem] lg:h-[27rem] xl:h-[31rem]">
               <img
-                src="/Image.png"
+                src="/Image.webp"
                 alt="Guess Me If You Can challenge visual"
                 className="h-full w-full object-cover"
               />

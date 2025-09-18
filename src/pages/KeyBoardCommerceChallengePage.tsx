@@ -21,13 +21,12 @@ const KeyBoardCommerceChallengePage = () => {
         </div>
 
         {/* Visual Cues */}
-        <div className="mb-8 grid grid-cols-1 md:grid-cols-1 gap-4">
+        {/* <div className="mb-8 grid grid-cols-1 md:grid-cols-1 gap-4">
           {[
             { title: "Ecommerce Shopping with Keyboard", desc: "", key: "cue1", img: "/keyboard-challenge.png" },
           ].map((cue) => (
             <div key={cue.key} className="group relative overflow-hidden rounded-2xl border border-primary/25 bg-background/60 backdrop-blur-sm shadow-accent-glow hover:border-primary/40 transition-colors">
-              
-              {/* Remove flex and span wrapper */}
+            
               <div className="aspect-video w-full bg-black/70">
                 <img
                   src={cue.img}
@@ -35,13 +34,9 @@ const KeyBoardCommerceChallengePage = () => {
                   className="h-full w-full object-cover"
                 />
               </div>
-
-              {/* <div className="p-1">
-                <div className="text-sm md:text-base font-cyber font-semibold text-primary text-center">{cue.title}</div>
-              </div> */}
             </div>
           ))}
-        </div>
+        </div> */}
 
 
         {/* Quick Badges */}
